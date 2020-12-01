@@ -1,0 +1,12 @@
+
+<label> Filter by  </label>
+<input type="text" [(ngModel)]="name" >
+
+<div *ngFor="let i of server | filter: name:'connect'">
+    <p>This is |
+        <span [ngStyle]="{ backgroundColor:i.color }"> {{i.name | uppercase}}</span> |
+        <span [ngStyle]="{ backgroundColor:i.status === 'online'?'palegreen': i.status ==='offline'? 'orange' :'transparent' }">
+            {{i.status | lowercase}}</span> |
+        <span>{{i.date | date:'fullDate'|uppercase }}</span>
+    </p>
+</div>

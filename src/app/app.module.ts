@@ -28,6 +28,9 @@ import { ObservablesComponent } from './section-6/observables/observables.compon
 
 import { AppRouting } from './section-5/routing.module';
 import { ObservableRouting } from './section-6/observables.routing.module';
+import { FormsComponent } from './section-7/form/forms/forms.component';
+import { PipesComponent } from './section-8/pipes/pipes.component';
+import { FilterPipe } from './section-8/filter.pipe';
 
 
 
@@ -50,7 +53,10 @@ import { ObservableRouting } from './section-6/observables.routing.module';
     ServerComponent,
     SingleUserComponent,
     PageNotFoundComponent,
-    ObservablesComponent
+    ObservablesComponent,
+    FormsComponent,
+    PipesComponent,
+    FilterPipe
   
   ],
   imports: [

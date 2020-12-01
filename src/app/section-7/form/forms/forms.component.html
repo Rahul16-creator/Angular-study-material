@@ -1,0 +1,22 @@
+<form (ngSubmit)="onSubmit()" #f="ngForm">
+
+
+    <label for="username">UserName</label><br>
+    <input type="text" ngModel name="name" required><br><br>
+    <button> Suggest an name </button><br><br>
+
+
+    <label for="mail">Mail</label><br>
+    <input type="email" ngModel name="email" required email #name="ngModel"><br><br>
+    <span *ngIf="!name.valid && name.touched"> please enter the data </span>
+    <div style="color: transparent;" *ngIf="!name.valid && name.touched">.</div>
+
+
+    <select name="" id="" ngModel name="secret" [ngModel]="default">
+        <option value="Your first pet?">Your first pet?</option>
+        <option value="Your nick name?">Your nick name?</option>
+    </select>
+    <br><br>
+
+    <button [disabled]="!f.valid" type="submit">Submit</button>
+</form>
