@@ -1,0 +1,16 @@
+<button (click)="get()">get</button>
+
+<div *ngFor="let acc of data;let i=index">
+    <p>{{acc.account}}</p>
+    <p>The status is {{acc.status}}</p>
+    <button (click)="setStatus('active' , i)">Active</button>
+    <button (click)="setStatus('inactive',i)">InActive</button>
+    <button (click)="setStatus('unknown',i)">UnKnown</button>
+</div>
+
+<!-- 
+<div class="container">
+    <button (click)="setStatus('active')">Active</button>
+    <button (click)="setStatus('inactive')">InActive</button>
+    <button (click)="setStatus('unknown')">UnKnown</button>
+</div> -->

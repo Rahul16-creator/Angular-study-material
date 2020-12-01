@@ -1,0 +1,14 @@
+<a [routerLink]="['/user',5,'edit']" [queryParams]="{category: 1}"> Routes </a>
+
+<h2>User--------</h2>
+<div *ngFor="let data of user">
+    <p (click)="go(data.name,data.mobile_number)">{{data.name}} - {{data.mobile_number}}</p>
+</div>
+<hr>
+<h2>server--------</h2>
+<div *ngFor="let data of server">
+    <p>{{data.name}} - {{data.status}}</p>
+</div>
+
+
+<h4>USER</h4>

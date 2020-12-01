@@ -1,0 +1,27 @@
+<div>
+    <button (click)="onlyodd= !onlyodd">change terms</button>
+    <h4>Numbers...</h4>
+    <div *ngIf="onlyodd">
+        <div *ngFor="let num of odd">
+            <p [ngClass]="{odd : num%2!=0}" [ngStyle]=" { backgroundColor : num%2!=0? 'palegreen' : 'transparent' }">{{num}}</p>
+        </div>
+    </div>
+    <div *ngIf="!onlyodd">
+        <div *ngFor="let num of even">
+            <p [ngClass]="{even : num%2==0}" [ngStyle]="{backgroundColor : num%2==0? 'pink' : 'transparent'}">{{num}}</p>
+        </div>
+    </div>
+</div>
+
+<h2 appDir >directive basic test</h2>
+<h2 appHighDirect>directive high test</h2>
+
+<h4 appHighDirect  >Mouse over Test</h4>
+
+<div [ngSwitch]="value">
+
+    <p *ngSwitchCase="4">the value is 4</p>
+    <p *ngSwitchCase="10"> the value is 10</p>
+    <p *ngSwitchDefault>the value is default</p>
+
+</div>

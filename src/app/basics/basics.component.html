@@ -1,0 +1,32 @@
+<p>the status of the user is <b> {{status}} </b> </p>
+<p>the nuber of the status is <b>{{status_number}} </b></p>
+<button (click)="butStatus()">{{but}}</button><br><br>
+
+<!-- property binding -->
+<button [disabled]="bool" (click)="changeStatus()"> click </button><br><br>
+
+<!-- event binding -->
+<input type="text" (input)="onData($event)">
+<p>{{value}}</p>
+
+<!-- two way  binding -->
+<input type="text" [(ngModel)]="data">
+<p>{{data}}</p>
+
+<!-- 1 way binding -->
+<input type="text" #s>
+<button (click)="onAddData(s)"></button>
+
+<!-- directives -->
+
+<!-- ng If and Else -->
+<p *ngIf="status_number; else noServer">Hi iam online</p>
+<ng-template #noServer>
+    <p>Hi i am offline</p>
+</ng-template>
+
+
+<!-- ng For -->
+<p *ngFor="let i of array">{{i}}</p>
+
+<button [ngStyle]="{ backgroundColor:getColor() }" (click)="onColor()"> ksjfks </button>

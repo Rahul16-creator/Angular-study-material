@@ -1,0 +1,8 @@
+<div *ngIf="element.status=='online'" style="background-color: green;">
+    <p>{{element.name}}</p>
+    <p>{{element.status}}</p>
+</div>
+<div *ngIf="element.status!='online'" style="background-color: red;">
+    <p>{{element.name}}</p>
+    <p>{{element.status}}</p>
+</div>
