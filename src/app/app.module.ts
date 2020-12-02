@@ -1,7 +1,10 @@
+// Angular Module
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 
+// Components and Services
 import { AppComponent } from './app.component';
 import { BasicsComponent } from './basics/basics.component';
 import { DataBindingDeepDiveComponent } from './data-binding-deep-dive/data-binding-deep-dive.component';
@@ -25,13 +28,14 @@ import { AuthService } from './section-5/auth.service';
 import { RouteAuthGuard } from './section-5/route-auth-guard.service';
 import { ObservablesComponent } from './section-6/observables/observables.component';
 
-
+// Routing
 import { AppRouting } from './section-5/routing.module';
 import { ObservableRouting } from './section-6/observables.routing.module';
 import { FormsComponent } from './section-7/form/forms/forms.component';
 import { PipesComponent } from './section-8/pipes/pipes.component';
 import { FilterPipe } from './section-8/filter.pipe';
-
+import { HttpComponent } from './section-9/http/http.component';
+import { from } from 'rxjs';
 
 
 @NgModule({
@@ -56,17 +60,19 @@ import { FilterPipe } from './section-8/filter.pipe';
     ObservablesComponent,
     FormsComponent,
     PipesComponent,
-    FilterPipe
-  
+    FilterPipe,
+    HttpComponent
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
     // AppRouting,
-    ObservableRouting
+    ObservableRouting,
+    HttpClientModule
 
   ],
-  providers: [RoutingService, DataService,AuthService,RouteAuthGuard],
+  providers: [RoutingService, DataService, AuthService, RouteAuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

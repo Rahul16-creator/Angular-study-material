@@ -1,0 +1,45 @@
+<form (ngSubmit)="onSubmit()" #f="ngForm">
+    <label>UserName</label><br><br>
+    <input type="email" name="username" ngModel required email><br><br>
+    <label> Password </label><br><br>
+    <input type="password" ngModel name="password"><br><br>
+    <button [disabled]="!f.valid" type="submit">Submit</button>
+</form>
+<br>
+
+<!-- Show Data -->
+
+<span>
+    <button (click)="onGetData()"> Show_data </button> |
+    <button (click)="onClearData()"> Clear Data </button>
+</span>
+<br>
+
+<div *ngIf="loading">
+    <br><br>
+    <div class="sk-chase">
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+    </div>
+    <br><br>
+</div>
+
+
+<div *ngIf="userData.length==0 && !loading && !isError">
+    <p> no data in db </p>
+</div>
+<br>
+
+
+<div *ngIf="userData.length > 0 && !loading && !isError">
+    <div *ngFor="let data of userData" style="margin-bottom: 20px;margin-left: 10px "> {{data.username}} | {{data.password}} </div>
+</div>
+<br><br>
+
+<div *ngIf="isError && !loading">
+    {{error}}
+</div>
